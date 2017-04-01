@@ -1,0 +1,14 @@
+<% provide :button_text, 'Create my account!'
+
+<h1 class="text-center">Sign up</h1>
+<hr />
+
+<%= render 'form' %>
+
+<div class="row">
+
+	<div class ="col-sm-offset-2 col-sm-10">
+	Already a user? <%= link_to 'Log in!', login_path %>
+	</div> 
+	
+</div>
