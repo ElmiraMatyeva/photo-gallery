@@ -6,18 +6,9 @@ class ApplicationController < ActionController::Base
   	devise_parameter_sanitizer.permit(:sign_up, keys: [:name]) 
   end
 
-  # include SessionsHelper
-
-  # private
-  # def logged_in_user
-  # 	unless logged_in?
-  # 		flash[:danger] = "Please log in!"
-  # 		redirect_to log_in
-  # 	end
-  # end
-
-  # def admin_user
-  # 	render text: "Forbidden", status: :forbidden unless current_user.admin?
-  # end
+  def access_denied(exception)
+  	flash[:danger] = exception.message
+  	redirect_to root_url
+  end
 
 end
