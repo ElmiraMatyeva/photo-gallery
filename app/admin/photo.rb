@@ -8,7 +8,7 @@ form do |f|
 		f.input :avatar, :as => :file, :hint => image_tag(f.object.avatar.url(:thumb))
 	end
 	f.actions	
-	end
+end
 
 permit_params :user_id, :title, :rating, :avatar
 
@@ -28,7 +28,7 @@ index do
 	actions
 end
 
-show 
+show do
 attributes_table do
 	row :avatar do |photo|
 		image_tag photo.avatar.url(:medium)

@@ -1,5 +1,22 @@
-<h1><%= @user.name %></h1>
-<hr />
-<p>
-  <b>Email:</b> <%= @user.email %>
-</p>
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+   <div class="span8">
+    <% if @user.photos.any? %>
+      <h3>My photos (<%= @user.photos.count %>)</h3>
+      <ol class="photos">
+        <%= render @photos %>
+      </ol>
+     <%= paginate @user.photos %>
+     <%= page_entries_info @user.photos, entry_name: "photo" %>
+    <% end %>
+  </div>
+</div>
+
+</div>

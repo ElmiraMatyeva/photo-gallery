@@ -13,7 +13,7 @@ index do
 	id_column
 
 	column :name do |user|
-		link_to user, admin_user_path(user)
+		link_to user.name, admin_user_path(user)
 	end
 
 actions
@@ -21,11 +21,12 @@ end
 
 show do
 attributes_table do 
-	row :name |user|
-		link_to user, admin_user_path(user)
+	row :name 
+	# |user|
+	# 	link_to user.name, admin_user_path(user)
 	end
 
-active_admin_products 	
+active_admin_comments 	
 end
 
 end
